@@ -1,15 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.error')
 @section('content')
-<div class="row justify-content-center h-100 align-items-center">
-    <div class="col-md-5">
-        <div class="form-input-content text-center error-page">
-            <h1 class="error-text fw-bold">500</h1>
-            <h4><i class="fa fa-times-circle text-danger"></i> Internal Server Error</h4>
-            <p>You do not have permission to view this resource</p> 
-            <div>
-                <a class="btn btn-primary" href="{{route('home')}}">Back to Home</a>
-            </div>	
+    <div class="main-wrapper">
+        <div class="error-box">
+            <h1>500</h1>
+            <h3 class="h2 mb-3"><i class="fas fa-exclamation-triangle"></i> Internal Server Error</h3>
+            <p class="h4 font-weight-normal">You do not have permission to view this resource</p>
+            <a href="{{route('home')}}" class="btn btn-primary">Back to Home</a>
         </div>
     </div>
-</div>
 @endsection
