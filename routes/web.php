@@ -19,6 +19,14 @@ use App\Http\Controllers\TypeFormController;
 |
 */
 
+/** for side bar menu active */
+function set_active( $route ) {
+    if( is_array( $route ) ){
+        return in_array(Request::path(), $route) ? 'active' : '';
+    }
+    return Request::path() == $route ? 'active' : '';
+}
+
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -54,5 +62,6 @@ Route::controller(RegisterController::class)->group(function () {
 Route::controller(HomeController::class)->group(function () {
     Route::get('/home', 'index')->middleware('auth')->name('home');
     Route::get('user/profile/page', 'userProfile')->middleware('auth')->name('user/profile/page');
+    Route::get('teacher/dashboard', 'teacherDashboardIndex')->middleware('auth')->name('teacher/dashboard');
 });
 
