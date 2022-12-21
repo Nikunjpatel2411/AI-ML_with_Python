@@ -5,7 +5,7 @@
                 <li class="menu-title">
                     <span>Main Menu</span>
                 </li>
-                <li class="submenu {{set_active(['home','teacher/dashboard'])}}">
+                <li class="submenu {{set_active(['home','teacher/dashboard','student/dashboard'])}}">
                     <a href="#"><i class="feather-grid"></i>
                         <span> Dashboard</span> 
                         <span class="menu-arrow"></span>
@@ -13,7 +13,7 @@
                     <ul>
                         <li><a href="{{ route('home') }}" class="{{set_active(['home'])}}">Admin Dashboard</a></li>
                         <li><a href="{{ route('teacher/dashboard') }}" class="{{set_active(['teacher/dashboard'])}}">Teacher Dashboard</a></li>
-                        <li><a href="student-dashboard.html">Student Dashboard</a></li>
+                        <li><a href="{{ route('student/dashboard') }}" class="{{set_active(['student/dashboard'])}}">Student Dashboard</a></li>
                     </ul>
                 </li>
                 <li class="submenu">
