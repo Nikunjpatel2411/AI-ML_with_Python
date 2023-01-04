@@ -8,6 +8,7 @@ use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\TypeFormController;
+use App\Http\Controllers\Setting;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,14 +46,14 @@ Route::group(['middleware'=>'auth'],function()
 
 Auth::routes();
 
-// -----------------------------login-------------------------------//
+// ----------------------------login ------------------------------//
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/login', 'authenticate');
     Route::get('/logout', 'logout')->name('logout');
 });
 
-// ------------------------------ register ---------------------------------//
+// ----------------------------- register -------------------------//
 Route::controller(RegisterController::class)->group(function () {
     Route::get('/register', 'register')->name('register');
     Route::post('/register','storeUser')->name('register');    
@@ -66,3 +67,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('student/dashboard', 'studentDashboardIndex')->middleware('auth')->name('student/dashboard');
 });
 
+// ------------------------ setting -------------------------------//
+Route::controller(Setting::class)->group(function () {
+    Route::get('setting/page', 'index')->middleware('auth')->name('setting/page');
+});

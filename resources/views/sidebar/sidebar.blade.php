@@ -5,6 +5,12 @@
                 <li class="menu-title">
                     <span>Main Menu</span>
                 </li>
+                <li class="{{set_active(['setting/page'])}}">
+                    <a href="{{ route('setting/page') }}">
+                        <i class="fas fa-cog"></i> 
+                        <span>Settings</span>
+                    </a>
+                </li>
                 <li class="submenu {{set_active(['home','teacher/dashboard','student/dashboard'])}}">
                     <a href="#"><i class="feather-grid"></i>
                         <span> Dashboard</span> 
@@ -110,10 +116,6 @@
                 </li>
                 <li>
                     <a href="library.html"><i class="fas fa-book"></i> <span>Library</span></a>
-                </li>
-                
-                <li>
-                    <a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a>
                 </li>
             </ul>
         </div>
