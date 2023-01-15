@@ -5,15 +5,16 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
-use Auth;
 use DB;
-use App\Models\User;
-use Carbon\Carbon;
+use Auth;
 use Session;
+use Carbon\Carbon;
+use App\Models\User;
+use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
+use App\Rules\MatchOldPassword;
 
 class LoginController extends Controller
 {

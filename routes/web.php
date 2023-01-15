@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\TypeFormController;
 use App\Http\Controllers\Setting;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +52,7 @@ Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/login', 'authenticate');
     Route::get('/logout', 'logout')->name('logout');
+    Route::post('change/password', 'changePassword')->name('change/password');
 });
 
 // ----------------------------- register -------------------------//
@@ -66,6 +68,12 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('teacher/dashboard', 'teacherDashboardIndex')->middleware('auth')->name('teacher/dashboard');
     Route::get('student/dashboard', 'studentDashboardIndex')->middleware('auth')->name('student/dashboard');
 });
+
+// ----------------------------- user controller -------------------------//
+Route::controller(UserManagementController::class)->group(function () {
+    Route::post('change/password', 'changePassword')->name('change/password');
+});
+
 
 // ------------------------ setting -------------------------------//
 Route::controller(Setting::class)->group(function () {

@@ -48,7 +48,6 @@
                 <div class="tab-content profile-tab-cont">
 
                     <div class="tab-pane fade show active" id="per_details_tab">
-
                         <div class="row">
                             <div class="col-lg-9">
                                 <div class="card">
@@ -128,20 +127,37 @@
                                 <h5 class="card-title">Change Password</h5>
                                 <div class="row">
                                     <div class="col-md-10 col-lg-6">
-                                        <form>
+                                        <form action="{{ route('change/password') }}" method="POST">
+                                            @csrf
                                             <div class="form-group">
                                                 <label>Old Password</label>
-                                                <input type="password" class="form-control">
+                                                <input type="password" class="form-control @error('current_password') is-invalid @enderror" name="current_password" value="{{ old('current_password') }}">
+                                                @error('current_password')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
+                                           
                                             <div class="form-group">
                                                 <label>New Password</label>
-                                                <input type="password" class="form-control">
+                                                <input type="password" class="form-control @error('new_password') is-invalid @enderror" name="new_password" value="{{ old('new_password') }}">
+                                                @error('new_password')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Confirm Password</label>
-                                                <input type="password" class="form-control">
+                                                <input type="password" class="form-control @error('new_confirm_password') is-invalid @enderror" name="new_confirm_password" value="{{ old('new_confirm_password') }}">
+                                                @error('new_confirm_password')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
-                                            <button class="btn btn-primary" type="submit">Save Changes</button>
+                                            <button type="submit" class="btn btn-primary">Save Changes</button>
                                         </form>
                                     </div>
                                 </div>
