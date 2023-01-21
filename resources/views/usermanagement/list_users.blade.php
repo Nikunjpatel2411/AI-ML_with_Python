@@ -20,11 +20,10 @@
             <div class="col-sm-12">
                 <div class="card card-table">
                     <div class="card-body">
-
                         <div class="page-header">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h3 class="page-title">Time Table</h3>
+                                    <h3 class="page-title">Users List</h3>
                                 </div>
                                 <div class="col-auto text-end float-end ms-auto download-grp">
                                     <a href="add-time-table.html" class="btn btn-primary">
@@ -45,27 +44,32 @@
                                         <th>Email</th>
                                         <th>Phone Number</th>
                                         <th>Date Join</th>
-                                        <th>End Time</th>
+                                        <th>Role Name</th>
                                         <th>Status</th>
                                         <th class="text-end">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($users as $key=>$list )
                                     <tr>
-                                        <td>PRE2309</td>
+                                        <td>{{ $list->user_id }}</td>
                                         <td>
                                             <h2 class="table-avatar">
                                                 <a class="avatar avatar-sm me-2">
-                                                    <img class="avatar-img rounded-circle"src=""alt="User Image">
+                                                    <img class="avatar-img rounded-circle"src="/images/{{ $list->avatar }}"alt="{{ $list->name }}">
                                                 </a>
                                             </h2>
                                         </td>
-                                        <td>10</td>
-                                        <td>10</td>
-                                        <td>English</td>
-                                        <td>10:00 AM</td>
-                                        <td>01:00 PM</td>
-                                        <td>23 Apr 2020</td>
+                                        <td>{{ $list->name }}</td>
+                                        <td>{{ $list->email }}</td>
+                                        <td>{{ $list->phone_number }}</td>
+                                        <td>{{ $list->join_date }}</td>
+                                        <td>{{ $list->role_name }}</td>
+                                        <td>
+                                            <div class="edit-delete-btn">
+                                                <a href="edit-blog.html" class="text-success">{{ $list->status }}</a>
+                                            </div>
+                                        </td>
                                         <td class="text-end">
                                             <div class="actions">
                                                 <a href="" class="btn btn-sm bg-success-light me-2">
@@ -78,6 +82,7 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

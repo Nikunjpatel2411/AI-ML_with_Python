@@ -20,7 +20,8 @@ class UserManagementController extends Controller
     // index page
     public function index()
     {
-        return view('usermanagement.list_users');
+        $users = User::all();
+        return view('usermanagement.list_users',compact('users'));
     }
     /** change password */
     public function changePassword(Request $request)
