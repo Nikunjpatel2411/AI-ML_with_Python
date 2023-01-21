@@ -22,6 +22,15 @@
                         <li><a href="{{ route('student/dashboard') }}" class="{{set_active(['student/dashboard'])}}">Student Dashboard</a></li>
                     </ul>
                 </li>
+                <li class="submenu {{set_active(['list/users'])}}">
+                    <a href="#"><i class="fas fa-shield-alt"></i>
+                        <span>User Management</span> 
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li><a href="{{ route('list/users') }}" class="{{set_active(['list/users'])}}">List Users</a></li>
+                    </ul>
+                </li>
                 <li class="submenu">
                     <a href="#"><i class="fas fa-graduation-cap"></i>
                         <span> Students</span>

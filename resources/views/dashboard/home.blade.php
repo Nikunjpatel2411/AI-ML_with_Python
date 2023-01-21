@@ -368,8 +368,5 @@
             </div>
         </div>
     </div>
-    <footer>
-        <p>Copyright © 2022 Soeng Souy.</p>
-    </footer>
 </div>
 @endsection

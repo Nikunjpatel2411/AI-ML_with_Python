@@ -17,6 +17,11 @@ use App\Rules\MatchOldPassword;
 
 class UserManagementController extends Controller
 {
+    // index page
+    public function index()
+    {
+        return view('usermanagement.list_users');
+    }
     /** change password */
     public function changePassword(Request $request)
     {

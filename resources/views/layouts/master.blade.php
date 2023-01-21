@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/plugins/simple-calendar/simple-calendar.css') }}">
+    <link rel="stylesheet" href="{{ URL::to('assets/plugins/datatables/datatables.min.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/css/style.css') }}">
 	{{-- message toastr --}}
 	<link rel="stylesheet" href="{{ URL::to('assets/css/toastr.min.css') }}">
@@ -173,6 +174,10 @@
 		@include('sidebar.sidebar')
 		{{-- content page --}}
         @yield('content')
+        <footer>
+            <p>Copyright © 2022 Soeng Souy.</p>
+        </footer>
+    
     </div>
 
     <script src="{{ URL::to('assets/js/jquery-3.6.0.min.js') }}"></script>
@@ -184,6 +189,7 @@
     <script src="{{ URL::to('assets/plugins/simple-calendar/jquery.simple-calendar.js') }}"></script>
     <script src="{{ URL::to('assets/js/calander.js') }}"></script>
     <script src="{{ URL::to('assets/js/circle-progress.min.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/datatables/datatables.min.js') }}"></script>
     <script src="{{ URL::to('assets/js/script.js') }}"></script>
 </body>
 </html>

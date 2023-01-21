@@ -71,6 +71,7 @@ Route::controller(HomeController::class)->group(function () {
 
 // ----------------------------- user controller -------------------------//
 Route::controller(UserManagementController::class)->group(function () {
+    Route::get('list/users', 'index')->middleware('auth')->name('list/users');
     Route::post('change/password', 'changePassword')->name('change/password');
 });
 
