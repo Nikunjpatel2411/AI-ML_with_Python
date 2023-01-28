@@ -23,6 +23,12 @@ class UserManagementController extends Controller
         $users = User::all();
         return view('usermanagement.list_users',compact('users'));
     }
+
+    /** user update */
+    public function userUpdate()
+    {
+        return view('usermanagement.user_update');
+    }
     /** change password */
     public function changePassword(Request $request)
     {

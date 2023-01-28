@@ -75,8 +75,7 @@
                                                 <a href="" class="btn btn-sm bg-success-light me-2">
                                                     <i class="feather-eye"></i>
                                                 </a>
-                                                <a href="edit-time-table.html"
-                                                    class="btn btn-sm bg-danger-light">
+                                                <a href="{{ route('view/user/edit') }}"class="btn btn-sm bg-danger-light">
                                                     <i class="feather-edit"></i>
                                                 </a>
                                             </div>

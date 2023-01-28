@@ -163,10 +163,7 @@
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="profile.html">
-                                                <img class="rounded-circle"
-                                                    src="assets/img/profiles/avatar-02.jpg" width="25"
-                                                    alt="Star Students">
-                                                John Smith
+                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Soeng Souy
                                             </a>
                                         </td>
                                         <td class="text-center">1185</td>
@@ -181,10 +178,7 @@
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="profile.html">
-                                                <img class="rounded-circle"
-                                                    src="assets/img/profiles/avatar-01.jpg" width="25"
-                                                    alt="Star Students">
-                                                Jolie Hoskins
+                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Soeng Souy
                                             </a>
                                         </td>
                                         <td class="text-center">1195</td>
@@ -199,10 +193,7 @@
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="profile.html">
-                                                <img class="rounded-circle"
-                                                    src="assets/img/profiles/avatar-03.jpg" width="25"
-                                                    alt="Star Students">
-                                                Pennington Joy
+                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Soeng Souy
                                             </a>
                                         </td>
                                         <td class="text-center">1196</td>
@@ -217,10 +208,7 @@
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="profile.html">
-                                                <img class="rounded-circle"
-                                                    src="assets/img/profiles/avatar-04.jpg" width="25"
-                                                    alt="Star Students">
-                                                Millie Marsden
+                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Soeng Souy
                                             </a>
                                         </td>
                                         <td class="text-center">1187</td>
@@ -235,10 +223,7 @@
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="profile.html">
-                                                <img class="rounded-circle"
-                                                    src="assets/img/profiles/avatar-05.jpg" width="25"
-                                                    alt="Star Students">
-                                                John Smith
+                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Soeng Souy
                                             </a>
                                         </td>
                                         <td class="text-center">1185</td>
