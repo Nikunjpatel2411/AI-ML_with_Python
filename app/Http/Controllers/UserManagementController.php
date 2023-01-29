@@ -25,9 +25,10 @@ class UserManagementController extends Controller
     }
 
     /** user update */
-    public function userUpdate()
+    public function userUpdate($id)
     {
-        return view('usermanagement.user_update');
+        $users = User::where('user_id',$id)->first();
+        return view('usermanagement.user_update',compact('users'));
     }
     /** change password */
     public function changePassword(Request $request)

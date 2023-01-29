@@ -22,13 +22,13 @@
                         <li><a href="{{ route('student/dashboard') }}" class="{{set_active(['student/dashboard'])}}">Student Dashboard</a></li>
                     </ul>
                 </li>
-                <li class="submenu {{set_active(['list/users'])}}">
+                <li class="submenu {{set_active(['list/users'])}} {{ (request()->is('view/user/edit/*')) ? 'active' : '' }}">
                     <a href="#"><i class="fas fa-shield-alt"></i>
                         <span>User Management</span> 
                         <span class="menu-arrow"></span>
                     </a>
                     <ul>
-                        <li><a href="{{ route('list/users') }}" class="{{set_active(['list/users'])}}">List Users</a></li>
+                        <li><a href="{{ route('list/users') }}" class="{{set_active(['list/users'])}} {{ (request()->is('view/user/edit/*')) ? 'active' : '' }}">List Users</a></li>
                     </ul>
                 </li>
                 <li class="submenu">
