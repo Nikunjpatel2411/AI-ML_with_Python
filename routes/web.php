@@ -73,7 +73,9 @@ Route::controller(HomeController::class)->group(function () {
 Route::controller(UserManagementController::class)->group(function () {
     Route::get('list/users', 'index')->middleware('auth')->name('list/users');
     Route::post('change/password', 'changePassword')->name('change/password');
-    Route::get('view/user/edit/{id}', 'userUpdate')->middleware('auth');
+    Route::get('view/user/edit/{id}', 'userView')->middleware('auth');
+    Route::post('user/update', 'userUpdate')->name('user/update');
+
 });
 
 
