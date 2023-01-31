@@ -75,6 +75,7 @@ Route::controller(UserManagementController::class)->group(function () {
     Route::post('change/password', 'changePassword')->name('change/password');
     Route::get('view/user/edit/{id}', 'userView')->middleware('auth');
     Route::post('user/update', 'userUpdate')->name('user/update');
+    Route::post('user/delete', 'userDelete')->name('user/delete');
 
 });
 

@@ -86,6 +86,30 @@ class UserManagementController extends Controller
         }
     }
 
+    /** user delete */
+    public function userDelete(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+
+            if ($request->avatar =='photo_defaults.jpg')
+            {
+                User::destroy($request->user_id);
+            } else {
+                User::destroy($request->user_id);
+                unlink('images/'.$request->avatar);
+            }
+            DB::commit();
+            Toastr::success('User deleted successfully :)','Success');
+            return redirect()->back();
+            
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('User deleted fail :)','Error');
+            return redirect()->back();
+        }
+    }
+
     /** change password */
     public function changePassword(Request $request)
     {
