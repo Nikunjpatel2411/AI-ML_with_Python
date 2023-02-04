@@ -22,6 +22,7 @@
                         <li><a href="{{ route('student/dashboard') }}" class="{{set_active(['student/dashboard'])}}">Student Dashboard</a></li>
                     </ul>
                 </li>
+                @if (Session::get('role_name') === 'Admin' || Session::get('role_name') === 'Super Admin')
                 <li class="submenu {{set_active(['list/users'])}} {{ (request()->is('view/user/edit/*')) ? 'active' : '' }}">
                     <a href="#"><i class="fas fa-shield-alt"></i>
                         <span>User Management</span> 
@@ -31,6 +32,8 @@
                         <li><a href="{{ route('list/users') }}" class="{{set_active(['list/users'])}} {{ (request()->is('view/user/edit/*')) ? 'active' : '' }}">List Users</a></li>
                     </ul>
                 </li>
+                @endif
+
                 <li class="submenu">
                     <a href="#"><i class="fas fa-graduation-cap"></i>
                         <span> Students</span>
