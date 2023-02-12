@@ -68,7 +68,14 @@
                                         <td>{{ $list->role_name }}</td>
                                         <td>
                                             <div class="edit-delete-btn">
-                                                <a href="edit-blog.html" class="text-success">{{ $list->status }}</a>
+                                                @if ($list->status === 'Active')
+                                                <a class="text-success">{{ $list->status }}</a>
+                                                @elseif ($list->status === 'Inactive')
+                                                <a class="text-warning">{{ $list->status }}</a>
+                                                @elseif ($list->status === 'Disable')
+                                                <a class="text-danger" >{{ $list->status }}</a>
+                                                @else 
+                                                @endif
                                             </div>
                                         </td>
                                         <td class="text-end">

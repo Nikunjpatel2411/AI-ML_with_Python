@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\TypeFormController;
 use App\Http\Controllers\Setting;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,3 +85,10 @@ Route::controller(UserManagementController::class)->group(function () {
 Route::controller(Setting::class)->group(function () {
     Route::get('setting/page', 'index')->middleware('auth')->name('setting/page');
 });
+
+// ------------------------ student -------------------------------//
+Route::controller(StudentController::class)->group(function () {
+    Route::get('student/list', 'student')->middleware('auth')->name('student/list');
+    Route::get('student/grid', 'studentGrid')->middleware('auth')->name('student/grid');
+});
+
