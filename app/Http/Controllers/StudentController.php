@@ -17,4 +17,10 @@ class StudentController extends Controller
     {
         return view('student.student-grid');
     }
+
+    // student add page
+    public function studentAdd()
+    {
+        return view('student.add-student');
+    }
 }
