@@ -91,5 +91,6 @@ Route::controller(StudentController::class)->group(function () {
     Route::get('student/list', 'student')->middleware('auth')->name('student/list');
     Route::get('student/grid', 'studentGrid')->middleware('auth')->name('student/grid');
     Route::get('student/add/page', 'studentAdd')->middleware('auth')->name('student/add/page');
+    Route::post('student/add/save', 'studentSave')->name('student/add/save');
 });
 
