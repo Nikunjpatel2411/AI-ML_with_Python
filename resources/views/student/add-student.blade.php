@@ -17,7 +17,8 @@
                     </div>
                 </div>
             </div>
-
+            {{-- message --}}
+            {!! Toastr::message() !!}
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card comman-shadow">
@@ -154,8 +155,8 @@
                                     <div class="col-12 col-sm-4">
                                         <div class="form-group local-forms">
                                             <label>Section <span class="login-danger">*</span></label>
-                                            <select class="form-control select  @error('section') is-invalid @enderror" name="section">
-                                                <option>Please Select Section </option>
+                                            <select class="form-control select @error('section') is-invalid @enderror" name="section">
+                                                <option selected disabled>Please Select Section </option>
                                                 <option value="B">B</option>
                                                 <option value="A">A</option>
                                                 <option value="C">C</option>
