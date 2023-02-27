@@ -30,27 +30,27 @@ class StudentController extends Controller
     /** student save record */
     public function studentSave(Request $request)
     {
+        $request->validate([
+            'first_name'    => 'required|string',
+            'last_name'     => 'required|string',
+            'gender'        => 'required|not_in:0',
+            'date_of_birth' => 'required|string',
+            'roll'          => 'required|string',
+            'blood_group'   => 'required|string',
+            'religion'      => 'required|string',
+            'email'         => 'required|email',
+            'class'         => 'required|string',
+            'section'       => 'required|string',
+            'admission_id'  => 'required|string',
+            'phone_number'  => 'required',
+            'upload'        => 'required|image',
+        ]);
+        
         DB::beginTransaction();
         try {
-            $request->validate([
-                'first_name'    => 'required|string',
-                'last_name'     => 'required|string',
-                'gender'        => 'required|not_in:0',
-                'date_of_birth' => 'required|string',
-                'roll'          => 'required|string',
-                'blood_group'   => 'required|string',
-                'religion'      => 'required|string',
-                'email'         => 'required|email',
-                'class'         => 'required|string',
-                'section'       => 'required|string',
-                'admission_id'  => 'required|string',
-                'phone_number'  => 'required',
-                'upload'        => 'required|image',
-            ]);
-
-            $upload = $request->file('upload');
-            $upload_file = rand() . '.' . $upload->getClientOriginalExtension();
-            $upload->move(public_path('/student-photos/'), $upload);
+           
+            $upload_file = rand() . '.' . $request->upload->extension();
+            $request->upload->move(storage_path('app/student-photos/'), $upload_file);
 
             $student = new Student;
             $student->first_name   = $request->first_name;

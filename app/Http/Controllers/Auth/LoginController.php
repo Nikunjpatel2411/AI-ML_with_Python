@@ -60,13 +60,14 @@ class LoginController extends Controller
     /** login with databases */
     public function authenticate(Request $request)
     {
+        $request->validate([
+            'email'    => 'required|string',
+            'password' => 'required|string',
+        ]);
+        
         DB::beginTransaction();
         try {
-            $request->validate([
-                'email'    => 'required|string',
-                'password' => 'required|string',
-            ]);
-
+            
             $email     = $request->email;
             $password  = $request->password;
 
