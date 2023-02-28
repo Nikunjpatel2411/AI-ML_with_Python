@@ -191,6 +191,7 @@
     <script src="{{ URL::to('assets/plugins/simple-calendar/jquery.simple-calendar.js') }}"></script>
     <script src="{{ URL::to('assets/js/calander.js') }}"></script>
     <script src="{{ URL::to('assets/js/circle-progress.min.js') }}"></script>
+    <script src="{{ URL::to('assets/plugins/moment/moment.min.js') }}"></script>
     <script src="{{ URL::to('assets/js/bootstrap-datetimepicker.min.js') }}"></script>
     <script src="{{ URL::to('assets/plugins/datatables/datatables.min.js') }}"></script>
     <script src="{{ URL::to('assets/plugins/select2/js/select2.min.js') }}"></script>
