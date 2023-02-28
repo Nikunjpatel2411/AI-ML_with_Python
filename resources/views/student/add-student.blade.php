@@ -60,9 +60,9 @@
                                             <label>Gender <span class="login-danger">*</span></label>
                                             <select class="form-control select  @error('gender') is-invalid @enderror" name="gender">
                                                 <option selected disabled>Select Gender</option>
-                                                <option value="Female">Female</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Others">Others</option>
+                                                <option value="Female" {{ old('gender') == 'Female' ? "selected" :"Female"}}>Female</option>
+                                                <option value="Male" {{ old('gender') == 'Male' ? "selected" :""}}>Male</option>
+                                                <option value="Others" {{ old('gender') == 'Others' ? "selected" :""}}>Others</option>
                                             </select>
                                             @error('gender')
                                                 <span class="invalid-feedback" role="alert">
@@ -98,9 +98,9 @@
                                             <label>Blood Group <span class="login-danger">*</span></label>
                                             <select class="form-control select @error('blood_group') is-invalid @enderror" name="blood_group">
                                                 <option selected disabled>Please Select Group </option>
-                                                <option value="B+">B+</option>
-                                                <option value="A+">A+</option>
-                                                <option value="O+">O+</option>
+                                                <option value="A+" {{ old('blood_group') == 'A+' ? "selected" :""}}>A+</option>
+                                                <option value="B+" {{ old('blood_group') == 'B+' ? "selected" :""}}>B+</option>
+                                                <option value="O+" {{ old('blood_group') == 'O+' ? "selected" :""}}>O+</option>
                                             </select>
                                             @error('blood_group')
                                                 <span class="invalid-feedback" role="alert">
@@ -114,9 +114,9 @@
                                             <label>Religion <span class="login-danger">*</span></label>
                                             <select class="form-control select @error('religion') is-invalid @enderror" name="religion">
                                                 <option selected disabled>Please Select Religion </option>
-                                                <option value="Hindu">Hindu</option>
-                                                <option value="Christian">Christian</option>
-                                                <option value="Others">Others</option>
+                                                <option value="Hindu" {{ old('religion') == 'Hindu' ? "selected" :""}}>Hindu</option>
+                                                <option value="Christian" {{ old('religion') == 'Christian' ? "selected" :""}}>Christian</option>
+                                                <option value="Others" {{ old('religion') == 'Others' ? "selected" :""}}>Others</option>
                                             </select>
                                             @error('religion')
                                                 <span class="invalid-feedback" role="alert">
@@ -141,9 +141,9 @@
                                             <label>Class <span class="login-danger">*</span></label>
                                             <select class="form-control select @error('class') is-invalid @enderror" name="class">
                                                 <option selected disabled>Please Select Class </option>
-                                                <option value="12">12</option>
-                                                <option value="11">11</option>
-                                                <option value="10">10</option>
+                                                <option value="12" {{ old('class') == '12' ? "selected" :""}}>12</option>
+                                                <option value="11" {{ old('class') == '11' ? "selected" :""}}>11</option>
+                                                <option value="10" {{ old('class') == '10' ? "selected" :""}}>10</option>
                                             </select>
                                             @error('class')
                                                 <span class="invalid-feedback" role="alert">
@@ -157,9 +157,9 @@
                                             <label>Section <span class="login-danger">*</span></label>
                                             <select class="form-control select @error('section') is-invalid @enderror" name="section">
                                                 <option selected disabled>Please Select Section </option>
-                                                <option value="B">B</option>
-                                                <option value="A">A</option>
-                                                <option value="C">C</option>
+                                                <option value="A" {{ old('section') == 'A' ? "selected" :""}}>A</option>
+                                                <option value="B" {{ old('section') == 'B' ? "selected" :""}}>B</option>
+                                                <option value="C" {{ old('section') == 'C' ? "selected" :""}}>C</option>
                                             </select>
                                             @error('section')
                                                 <span class="invalid-feedback" role="alert">
