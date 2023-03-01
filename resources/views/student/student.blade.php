@@ -79,26 +79,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($studentList as $key=>$list )
+                                            
                                         <tr>
                                             <td>
                                                 <div class="form-check check-tables">
                                                     <input class="form-check-input" type="checkbox" value="something">
                                                 </div>
                                             </td>
-                                            <td>PRE2209</td>
+                                            <td>STD{{ ++$key }}</td>
                                             <td>
                                                 <h2 class="table-avatar">
                                                     <a href="student-details.html"class="avatar avatar-sm me-2">
                                                         <img class="avatar-img rounded-circle" src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" alt="User Image">
                                                     </a>
-                                                    <a href="student-details.html">Soeng Souy</a>
+                                                    <a href="student-details.html">{{ $list->first_name }} {{ $list->last_name }}</a>
                                                 </h2>
                                             </td>
-                                            <td>10 A</td>
-                                            <td>2 Feb 2002</td>
-                                            <td>Jeffrey Wong</td>
-                                            <td>097 3584 5870</td>
-                                            <td>911 Deer Ridge Drive,USA</td>
+                                            <td>{{ $list->class }} {{ $list->section }}</td>
+                                            <td>{{ $list->date_of_birth }}</td>
+                                            <td>Soeng Soeng</td>
+                                            <td>{{ $list->phone_number }}</td>
+                                            <td>110 Sen Sok Steet,PP</td>
                                             <td class="text-end">
                                                 <div class="actions ">
                                                     <a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
@@ -110,6 +112,8 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        @endforeach
+
                                     </tbody>
                                 </table>
                             </div>
