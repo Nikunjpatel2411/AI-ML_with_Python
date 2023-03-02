@@ -91,7 +91,7 @@
                                             <td>
                                                 <h2 class="table-avatar">
                                                     <a href="student-details.html"class="avatar avatar-sm me-2">
-                                                        <img class="avatar-img rounded-circle" src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" alt="User Image">
+                                                        <img class="avatar-img rounded-circle" src="{{ Storage::url('student-photos/'.$list->upload) }}" alt="User Image">
                                                     </a>
                                                     <a href="student-details.html">{{ $list->first_name }} {{ $list->last_name }}</a>
                                                 </h2>
@@ -102,7 +102,7 @@
                                             <td>{{ $list->phone_number }}</td>
                                             <td>110 Sen Sok Steet,PP</td>
                                             <td class="text-end">
-                                                <div class="actions ">
+                                                <div class="actions">
                                                     <a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
                                                         <i class="feather-eye"></i>
                                                     </a>
