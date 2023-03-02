@@ -103,11 +103,11 @@
                                             <td>110 Sen Sok Steet,PP</td>
                                             <td class="text-end">
                                                 <div class="actions">
-                                                    <a href="javascript:;" class="btn btn-sm bg-success-light me-2 ">
-                                                        <i class="feather-eye"></i>
-                                                    </a>
-                                                    <a href="edit-student.html" class="btn btn-sm bg-danger-light">
+                                                    <a href="{{ url('student/edit/'.$list->id) }}" class="btn btn-sm bg-danger-light">
                                                         <i class="feather-edit"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm bg-success-light me-2 ">
+                                                        <i class="feather-trash"></i>
                                                     </a>
                                                 </div>
                                             </td>

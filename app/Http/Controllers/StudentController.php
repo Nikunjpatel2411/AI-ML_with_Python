@@ -80,4 +80,11 @@ class StudentController extends Controller
             return redirect()->back();
         }
     }
+
+    /** view for edit student */
+    public function studentEdit($id)
+    {
+        $studentEdit = Student::where('id',$id)->first();
+        return view('student.edit-student',compact('studentEdit'));
+    }
 }
