@@ -87,4 +87,34 @@ class StudentController extends Controller
         $studentEdit = Student::where('id',$id)->first();
         return view('student.edit-student',compact('studentEdit'));
     }
+
+    /** update record */
+    public function studentUpdate(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+
+            if (!empty($request->upload)) {
+                unlink(storage_path('app/public/student-photos/'.$request->image_hidden));
+                $upload_file = rand() . '.' . $request->upload->extension();
+                $request->upload->move(storage_path('app/public/student-photos/'), $upload_file);
+            } else {
+                $upload_file = $request->image_hidden;
+            }
+           
+            $updateRecord = [
+                'upload' => $upload_file,
+            ];
+            Student::where('id',$request->id)->update($updateRecord);
+            
+            Toastr::success('Has been update successfully :)','Success');
+            DB::commit();
+            return redirect()->back();
+           
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('fail, update student  :)','Error');
+            return redirect()->back();
+        }
+    }
 }

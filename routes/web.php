@@ -93,5 +93,7 @@ Route::controller(StudentController::class)->group(function () {
     Route::get('student/add/page', 'studentAdd')->middleware('auth')->name('student/add/page');
     Route::post('student/add/save', 'studentSave')->name('student/add/save');
     Route::get('student/edit/{id}', 'studentEdit');
+    Route::post('student/update', 'studentUpdate')->name('student/update');
+
 });
 
