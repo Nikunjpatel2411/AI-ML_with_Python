@@ -94,6 +94,7 @@ Route::controller(StudentController::class)->group(function () {
     Route::post('student/add/save', 'studentSave')->name('student/add/save');
     Route::get('student/edit/{id}', 'studentEdit');
     Route::post('student/update', 'studentUpdate')->name('student/update');
+    Route::post('student/delete', 'studentDelete')->name('student/delete');
 
 });
 

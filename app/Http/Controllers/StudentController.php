@@ -12,7 +12,6 @@ class StudentController extends Controller
     // index page student list
     public function student()
     {
-
         $studentList = Student::all();
         return view('student.student',compact('studentList'));
     }
@@ -114,6 +113,27 @@ class StudentController extends Controller
         } catch(\Exception $e) {
             DB::rollback();
             Toastr::error('fail, update student  :)','Error');
+            return redirect()->back();
+        }
+    }
+
+    /** student delete */
+    public function studentDelete(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+           
+            if (!empty($request->id)) {
+                Student::destroy($request->id);
+                unlink(storage_path('app/public/student-photos/'.$request->avatar));
+                DB::commit();
+                Toastr::success('Student deleted successfully :)','Success');
+                return redirect()->back();
+            }
+    
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Student deleted fail :)','Error');
             return redirect()->back();
         }
     }
