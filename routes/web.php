@@ -88,13 +88,14 @@ Route::controller(Setting::class)->group(function () {
 
 // ------------------------ student -------------------------------//
 Route::controller(StudentController::class)->group(function () {
-    Route::get('student/list', 'student')->middleware('auth')->name('student/list');
-    Route::get('student/grid', 'studentGrid')->middleware('auth')->name('student/grid');
-    Route::get('student/add/page', 'studentAdd')->middleware('auth')->name('student/add/page');
-    Route::post('student/add/save', 'studentSave')->name('student/add/save');
-    Route::get('student/edit/{id}', 'studentEdit');
-    Route::post('student/update', 'studentUpdate')->name('student/update');
-    Route::post('student/delete', 'studentDelete')->name('student/delete');
+    Route::get('student/list', 'student')->middleware('auth')->name('student/list'); // list student
+    Route::get('student/grid', 'studentGrid')->middleware('auth')->name('student/grid'); // grid student
+    Route::get('student/add/page', 'studentAdd')->middleware('auth')->name('student/add/page'); // page student
+    Route::post('student/add/save', 'studentSave')->name('student/add/save'); // save record student
+    Route::get('student/edit/{id}', 'studentEdit'); // view for edit
+    Route::post('student/update', 'studentUpdate')->name('student/update'); // update record student
+    Route::post('student/delete', 'studentDelete')->name('student/delete'); // delete record student
+    Route::get('student/profile/{id}', 'studentProfile')->middleware('auth'); // profile student
 
 });
 

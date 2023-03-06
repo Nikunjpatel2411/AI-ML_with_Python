@@ -19,7 +19,8 @@ class StudentController extends Controller
     // index page student grid
     public function studentGrid()
     {
-        return view('student.student-grid');
+        $studentList = Student::all();
+        return view('student.student-grid',compact('studentList'));
     }
 
     // student add page
@@ -136,5 +137,12 @@ class StudentController extends Controller
             Toastr::error('Student deleted fail :)','Error');
             return redirect()->back();
         }
+    }
+
+    /** student profile page */
+    public function studentProfile($id)
+    {
+        $studentProfile = Student::where('id',$id)->first();
+        return view('student.student-profile',compact('studentProfile'));
     }
 }

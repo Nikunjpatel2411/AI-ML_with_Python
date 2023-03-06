@@ -35,23 +35,25 @@
 
                             <div class="student-pro-list">
                                 <div class="row">
+                                    @foreach ($studentList as $key=>$list )
                                     <div class="col-xl-3 col-lg-4 col-md-6 d-flex">
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="student-box flex-fill">
                                                     <div class="student-img">
-                                                        <a href="student-details.html">
-                                                            <img class="img-fluid" alt="Students Info" src="{{ URL::to('assets/img/profile-user.jpg') }}">
+                                                        <a href="{{ url('student/profile/'.$list->id) }}">
+                                                            <img class="img-fluid" alt="Students Info" src="{{ Storage::url('student-photos/'.$list->upload) }}" width="20%" height="20%">
                                                         </a>
                                                     </div>
                                                     <div class="student-content pb-0">
-                                                        <h5><a href="student-details.html">Soeng Souy</a></h5>
+                                                        <h5><a href="{{ url('student/profile/'.$list->id) }}">{{ $list->first_name }} {{ $list->last_name }}</a></h5>
                                                         <h6>Student</h6>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
