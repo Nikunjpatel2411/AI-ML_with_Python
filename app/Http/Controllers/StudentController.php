@@ -9,21 +9,21 @@ use Brian2694\Toastr\Facades\Toastr;
 
 class StudentController extends Controller
 {
-    // index page student list
+    /** index page student list */
     public function student()
     {
         $studentList = Student::all();
         return view('student.student',compact('studentList'));
     }
 
-    // index page student grid
+    /** index page student grid */
     public function studentGrid()
     {
         $studentList = Student::all();
         return view('student.student-grid',compact('studentList'));
     }
 
-    // student add page
+    /** student add page */
     public function studentAdd()
     {
         return view('student.add-student');

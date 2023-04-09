@@ -1,7 +1,6 @@
 
 @extends('layouts.master')
 @section('content')
-
     <div class="page-wrapper">
         <div class="content container-fluid">
             <div class="page-header">
@@ -22,8 +21,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="about-info">
-                                <h4>Profile <span><a href="javascript:;"><i
-                                                class="feather-more-vertical"></i></a></span></h4>
+                                <h4>Profile <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span></h4>
                             </div>
                             <div class="student-profile-head">
                                 <div class="profile-bg-img">
@@ -88,7 +86,7 @@
                                             </div>
                                             <div class="views-personal">
                                                 <h4>Name</h4>
-                                                <h5>Bruce Willis</h5>
+                                                <h5>{{ $studentProfile->first_name }} {{ $studentProfile->last_name }}</h5>
                                             </div>
                                         </div>
                                         <div class="personal-activity">
@@ -106,7 +104,7 @@
                                             </div>
                                             <div class="views-personal">
                                                 <h4>Mobile</h4>
-                                                <h5>+91 89657 48512</h5>
+                                                <h5>{{ $studentProfile->phone_number }}</h5>
                                             </div>
                                         </div>
                                         <div class="personal-activity">
@@ -115,8 +113,7 @@
                                             </div>
                                             <div class="views-personal">
                                                 <h4>Email</h4>
-                                                <h5><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                                        data-cfemail="81e5e0e8f2f8c1e6ece0e8edafe2eeec">[email&#160;protected]</a>
+                                                <h5><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81e5e0e8f2f8c1e6ece0e8edafe2eeec">{{ $studentProfile->email }}</a>
                                                 </h5>
                                             </div>
                                         </div>
@@ -126,7 +123,7 @@
                                             </div>
                                             <div class="views-personal">
                                                 <h4>Gender</h4>
-                                                <h5>Male</h5>
+                                                <h5>{{ $studentProfile->gender }}</h5>
                                             </div>
                                         </div>
                                         <div class="personal-activity">
@@ -135,7 +132,7 @@
                                             </div>
                                             <div class="views-personal">
                                                 <h4>Date of Birth</h4>
-                                                <h5>22 Apr 1995</h5>
+                                                <h5>{{ $studentProfile->date_of_birth }}</h5>
                                             </div>
                                         </div>
                                         <div class="personal-activity">
@@ -172,9 +169,7 @@
                                                     <p>90%</p>
                                                 </div>
                                                 <div class="progress mb-0">
-                                                    <div class="progress-bar bg-photoshop" role="progressbar"
-                                                        style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-photoshop" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                             <div class="skill-statistics">
@@ -183,9 +178,7 @@
                                                     <p>75%</p>
                                                 </div>
                                                 <div class="progress mb-0">
-                                                    <div class="progress-bar bg-editor" role="progressbar"
-                                                        style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-editor" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                             <div class="skill-statistics mb-0">
@@ -194,9 +187,7 @@
                                                     <p>95%</p>
                                                 </div>
                                                 <div class="progress mb-0">
-                                                    <div class="progress-bar bg-illustrator" role="progressbar"
-                                                        style="width: 95%" aria-valuenow="95" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-illustrator" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -232,18 +223,15 @@
                                             </div>
                                             <div class="educate-year">
                                                 <h6>2011 - 2012</h6>
-                                                <p>Higher Secondary Schooling at xyz school of higher secondary
-                                                    education, Mumbai.</p>
+                                                <p>Higher Secondary Schooling at xyz school of higher secondary education, Mumbai.</p>
                                             </div>
                                             <div class="educate-year">
                                                 <h6>2012 - 2015</h6>
-                                                <p>Bachelor of Science at Abc College of Art and Science, Chennai.
-                                                </p>
+                                                <p>Bachelor of Science at Abc College of Art and Science, Chennai.</p>
                                             </div>
                                             <div class="educate-year">
                                                 <h6>2015 - 2017</h6>
-                                                <p class="mb-0">Master of Science at Cdm College of Engineering and
-                                                    Technology, Pune.</p>
+                                                <p class="mb-0">Master of Science at Cdm College of Engineering and Technology, Pune.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -254,7 +242,5 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 @endsection
