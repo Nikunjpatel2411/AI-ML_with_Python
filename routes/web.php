@@ -10,6 +10,7 @@ use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\TypeFormController;
 use App\Http\Controllers\Setting;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +95,9 @@ Route::controller(StudentController::class)->group(function () {
     Route::post('student/update', 'studentUpdate')->name('student/update'); // update record student
     Route::post('student/delete', 'studentDelete')->name('student/delete'); // delete record student
     Route::get('student/profile/{id}', 'studentProfile')->middleware('auth'); // profile student
-
 });
 
+// ------------------------ teacher -------------------------------//
+Route::controller(TeacherController::class)->group(function () {
+    Route::get('teacher/add/page', 'teacherAdd')->middleware('auth')->name('teacher/add/page'); // page teacher
+});

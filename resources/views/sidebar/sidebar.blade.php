@@ -46,7 +46,8 @@
                         <li><a href=""  class="{{ (request()->is('student/profile/*')) ? 'active' : '' }}">Student View</a></li>
                     </ul>
                 </li>
-                <li class="submenu">
+
+                <li class="submenu  {{set_active(['teacher/add/page'])}}">
                     <a href="#"><i class="fas fa-chalkboard-teacher"></i>
                         <span> Teachers</span>
                         <span class="menu-arrow"></span>
@@ -54,10 +55,11 @@
                     <ul>
                         <li><a href="teachers.html">Teacher List</a></li>
                         <li><a href="teacher-details.html">Teacher View</a></li>
-                        <li><a href="add-teacher.html">Teacher Add</a></li>
+                        <li><a href="{{ route('teacher/add/page') }}" class="{{set_active(['teacher/add/page'])}}">Teacher Add</a></li>
                         <li><a href="edit-teacher.html">Teacher Edit</a></li>
                     </ul>
                 </li>
+                
                 <li class="submenu">
                     <a href="#"><i class="fas fa-building"></i>
                         <span> Departments</span>
