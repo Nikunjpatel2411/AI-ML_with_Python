@@ -47,16 +47,16 @@
                     </ul>
                 </li>
 
-                <li class="submenu  {{set_active(['teacher/add/page'])}}">
+                <li class="submenu  {{set_active(['teacher/add/page','teacher/list/page'])}}">
                     <a href="#"><i class="fas fa-chalkboard-teacher"></i>
                         <span> Teachers</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul>
-                        <li><a href="teachers.html">Teacher List</a></li>
+                        <li><a href="{{ route('teacher/list/page') }}" class="{{set_active(['teacher/list/page'])}}">Teacher List</a></li>
                         <li><a href="teacher-details.html">Teacher View</a></li>
                         <li><a href="{{ route('teacher/add/page') }}" class="{{set_active(['teacher/add/page'])}}">Teacher Add</a></li>
-                        <li><a href="edit-teacher.html">Teacher Edit</a></li>
+                        <li><a href="">Teacher Edit</a></li>
                     </ul>
                 </li>
                 

@@ -11,4 +11,10 @@ class TeacherController extends Controller
     {
         return view('teacher.add-teacher');
     }
+
+    /** teacher list */
+    public function teacherList()
+    {
+        return view('teacher.list-teachers');
+    }
 }
