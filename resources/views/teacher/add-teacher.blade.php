@@ -28,56 +28,53 @@
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Teacher ID <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Teacher ID">
+                                        <input type="text" class="form-control" name="teacher_id" placeholder="Teacher ID">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Name <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter Name">
+                                        <input type="text" class="form-control" name="full_name" placeholder="Enter Name">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Gender <span class="login-danger">*</span></label>
-                                        <select class="form-control select">
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                            <option>Others</option>
+                                        <select class="form-control select" name="gender">
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Others">Others</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms calendar-icon">
                                         <label>Date Of Birth <span class="login-danger">*</span></label>
-                                        <input class="form-control datetimepicker" type="text"
-                                            placeholder="DD-MM-YYYY">
+                                        <input type="text" class="form-control datetimepicker" name="date_of_Birth" placeholder="DD-MM-YYYY">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Mobile <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter Phone">
+                                        <input type="text" class="form-control" name="mobile" placeholder="Enter Phone">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms calendar-icon">
                                         <label>Joining Date <span class="login-danger">*</span></label>
-                                        <input class="form-control datetimepicker" type="text"
-                                            placeholder="DD-MM-YYYY">
+                                        <input type="text" class="form-control datetimepicker" name="joining_date" placeholder="DD-MM-YYYY">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4 local-forms">
                                     <div class="form-group">
                                         <label>Qualification <span class="login-danger">*</span></label>
-                                        <input class="form-control" type="text"
-                                            placeholder="Enter Joining Date">
+                                        <input type="text" class="form-control" name="qualification" placeholder="Enter Joining Date">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Experience <span class="login-danger">*</span></label>
-                                        <input class="form-control" type="text" placeholder="Enter Experience">
+                                        <input type="text" class="form-control" name="experience" placeholder="Enter Experience">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -86,25 +83,25 @@
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Username <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter Username">
+                                        <input type="text" class="form-control" name="username" placeholder="Enter Username">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Email ID <span class="login-danger">*</span></label>
-                                        <input type="email" class="form-control" placeholder="Enter Mail Id">
+                                        <input type="email" class="form-control" name="email" placeholder="Enter Mail Id">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Password <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter Password">
+                                        <input type="text" class="form-control" name="password" placeholder="Enter Password">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Repeat Password <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Repeat Password">
+                                        <input type="text" class="form-control" name="repeat_password" placeholder="Repeat Password">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -113,31 +110,31 @@
                                 <div class="col-12">
                                     <div class="form-group local-forms">
                                         <label>Address <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter address">
+                                        <input type="text" class="form-control" name="address" placeholder="Enter address">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>City <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter City">
+                                        <input type="text" class="form-control" name="city" placeholder="Enter City">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>State <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter State">
+                                        <input type="text" class="form-control" name="state" placeholder="Enter State">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Zip Code <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter Zip">
+                                        <input type="text" class="form-control" name="zip_code" placeholder="Enter Zip">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Country <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter Country">
+                                        <input type="text" class="form-control" name="country" placeholder="Enter Country">
                                     </div>
                                 </div>
                                 <div class="col-12">
