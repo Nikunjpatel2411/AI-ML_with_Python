@@ -15,7 +15,8 @@
                 </div>
             </div>
         </div>
-
+        {{-- message --}}
+        {!! Toastr::message() !!}
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -26,7 +27,6 @@
                                 <div class="col-12">
                                     <h5 class="form-title"><span>Basic Details</span></h5>
                                 </div>
-                                
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Name <span class="login-danger">*</span></label>
@@ -137,7 +137,7 @@
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Password <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Enter Password">
+                                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Enter Password">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -148,8 +148,8 @@
                                 <div class="col-12 col-sm-4">
                                     <div class="form-group local-forms">
                                         <label>Repeat Password <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control @error('repeat_password') is-invalid @enderror" name="repeat_password" placeholder="Repeat Password">
-                                        @error('repeat_password')
+                                        <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" placeholder="Repeat Password">
+                                        @error('password_confirmation')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>

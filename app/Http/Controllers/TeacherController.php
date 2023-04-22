@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Hash;
+use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Teacher;
+use Brian2694\Toastr\Facades\Toastr;
 
 class TeacherController extends Controller
 {
@@ -32,13 +38,49 @@ class TeacherController extends Controller
             'username'        => 'required|string',
             'email'           => 'required|string',
             'password'        => 'required|string|min:8|confirmed',
-            'repeat_password' => 'required',
+            'password_confirmation' => 'required',
             'address'         => 'required|string',
             'city'            => 'required|string',
             'state'           => 'required|string',
             'zip_code'        => 'required|string',
             'country'         => 'required|string',
         ]);
+
+        try {
         
+            $dt        = Carbon::now();
+            $todayDate = $dt->toDayDateTimeString();
+            
+            $saveRecord = new Teacher;
+            $saveRecord->full_name     = $request->full_name;
+            $saveRecord->gender        = $request->gender;
+            $saveRecord->date_of_birth = $request->date_of_birth;
+            $saveRecord->mobile        = $request->mobile;
+            $saveRecord->joining_date  = $request->joining_date;
+            $saveRecord->qualification = $request->qualification;
+            $saveRecord->experience    = $request->experience;
+            $saveRecord->username      = $request->username;
+            $saveRecord->address       = $request->address;
+            $saveRecord->city          = $request->city;
+            $saveRecord->state         = $request->state;
+            $saveRecord->zip_code      = $request->zip_code;
+            $saveRecord->country       = $request->country;
+            $saveRecord->save();
+        
+            User::create([
+                'name'      => $request->full_name,
+                'email'     => $request->email,
+                'join_date' => $todayDate,
+                'role_name' => 'Teacher',
+                'password'  => Hash::make($request->password),
+            ]);
+            Toastr::success('Has been add successfully :)','Success');
+            return redirect()->back();
+        } catch(\Exception $e) {
+            \Log::info($e);
+            DB::rollback();
+            Toastr::error('fail, Add new record  :)','Error');
+            return redirect()->back();
+        }
     }
 }
