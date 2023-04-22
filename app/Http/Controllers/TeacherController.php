@@ -22,7 +22,6 @@ class TeacherController extends Controller
     public function saveRecord(Request $request)
     {
         $request->validate([
-            'teacher_id'      => 'required|string',
             'full_name'       => 'required|string',
             'gender'          => 'required|string',
             'date_of_birth'   => 'required|string',
