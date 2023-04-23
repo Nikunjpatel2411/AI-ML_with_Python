@@ -21,7 +21,11 @@ class TeacherController extends Controller
     /** teacher list */
     public function teacherList()
     {
-        return view('teacher.list-teachers');
+        $listTeacher = DB::table('users')
+            ->join('teachers','teachers.teacher_id','users.user_id')
+            ->select('users.user_id','users.name','users.avatar','teachers.gender','teachers.mobile','teachers.address')
+            ->get();
+        return view('teacher.list-teachers',compact('listTeacher'));
     }
 
     /** save record */
@@ -51,7 +55,18 @@ class TeacherController extends Controller
             $dt        = Carbon::now();
             $todayDate = $dt->toDayDateTimeString();
             
+                 
+            User::create([
+                'name'      => $request->full_name,
+                'email'     => $request->email,
+                'join_date' => $todayDate,
+                'role_name' => 'Teacher',
+                'password'  => Hash::make($request->password),
+            ]);
+            $user_id = DB::table('users')->select('user_id')->orderBy('id','DESC')->first();
+            
             $saveRecord = new Teacher;
+            $saveRecord->teacher_id    = $user_id->user_id;
             $saveRecord->full_name     = $request->full_name;
             $saveRecord->gender        = $request->gender;
             $saveRecord->date_of_birth = $request->date_of_birth;
@@ -66,14 +81,7 @@ class TeacherController extends Controller
             $saveRecord->zip_code      = $request->zip_code;
             $saveRecord->country       = $request->country;
             $saveRecord->save();
-        
-            User::create([
-                'name'      => $request->full_name,
-                'email'     => $request->email,
-                'join_date' => $todayDate,
-                'role_name' => 'Teacher',
-                'password'  => Hash::make($request->password),
-            ]);
+   
             Toastr::success('Has been add successfully :)','Success');
             return redirect()->back();
         } catch(\Exception $e) {

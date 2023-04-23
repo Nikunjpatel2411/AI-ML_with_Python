@@ -63,14 +63,12 @@
                         </div>
 
                         <div class="table-responsive">
-                            <table
-                                class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
-                                <thead class="student-thread">
+                            <table id="DataList" class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
+                                <thead class="student-thread"> 
                                     <tr>
                                         <th>
                                             <div class="form-check check-tables">
-                                                <input class="form-check-input" type="checkbox"
-                                                    value="something">
+                                                <input class="form-check-input" type="checkbox" value="something">
                                             </div>
                                         </th>
                                         <th>ID</th>
@@ -85,6 +83,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($listTeacher as $list)
                                     <tr>
                                         <td>
                                             <div class="form-check check-tables">
@@ -92,23 +91,25 @@
                                                     value="something">
                                             </div>
                                         </td>
-                                        <td>PRE2209</td>
+                                        <td>{{ $list->user_id }}</td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a href="teacher-details.html"
-                                                    class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}"
-                                                        alt="User Image"></a>
-                                                <a href="teacher-details.html">Aaliyah</a>
+                                                <a href="teacher-details.html" class="avatar avatar-sm me-2">
+                                                    @if (!empty($list->avatar))
+                                                        <img class="avatar-img rounded-circle" src="{{ URL::to('images/'.$list->avatar) }}" alt="{{ $list->name }}">
+                                                    @else
+                                                        <img class="avatar-img rounded-circle" src="{{ URL::to('images/photo_defaults.jpg') }}" alt="{{ $list->name }}">
+                                                    @endif
+                                                </a>
+                                                <a href="teacher-details.html">{{ $list->name }}</a>
                                             </h2>
                                         </td>
                                         <td>10</td>
-                                        <td>Female</td>
+                                        <td>{{ $list->gender }}</td>
                                         <td>Mathematics</td>
                                         <td>A</td>
-                                        <td>097 3584 5870</td>
-                                        <td>911 Deer Ridge Drive,USA</td>
+                                        <td>{{ $list->mobile }}</td>
+                                        <td>{{ $list->address }}</td>
                                         <td class="text-end">
                                             <div class="actions">
                                                 <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
@@ -120,321 +121,8 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check check-tables">
-                                                <input class="form-check-input" type="checkbox"
-                                                    value="something">
-                                            </div>
-                                        </td>
-                                        <td>PRE2213</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="teacher-details.html"
-                                                    class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}"
-                                                        alt="User Image"></a>
-                                                <a href="teacher-details.html">Malynne</a>
-                                            </h2>
-                                        </td>
-                                        <td>8</td>
-                                        <td>Female</td>
-                                        <td>Physics</td>
-                                        <td>A</td>
-                                        <td>242 362 3100</td>
-                                        <td>Bacardi Rd P.O. Box N-4880, New Providence</td>
-                                        <td class="text-end">
-                                            <div class="actions">
-                                                <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-                                                    <i class="feather-eye"></i>
-                                                </a>
-                                                <a href="edit-teacher.html" class="btn btn-sm bg-danger-light">
-                                                    <i class="feather-edit"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check check-tables">
-                                                <input class="form-check-input" type="checkbox"
-                                                    value="something">
-                                            </div>
-                                        </td>
-                                        <td>PRE2143</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="teacher-details.html"
-                                                    class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}"
-                                                        alt="User Image"></a>
-                                                <a href="teacher-details.html">Levell Scott</a>
-                                            </h2>
-                                        </td>
-                                        <td>10</td>
-                                        <td>Male</td>
-                                        <td>Science</td>
-                                        <td>B</td>
-                                        <td>026 7318 4366</td>
-                                        <td>P.O. Box: 41, Gaborone</td>
-                                        <td class="text-end">
-                                            <div class="actions">
-                                                <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-                                                    <i class="feather-eye"></i>
-                                                </a>
-                                                <a href="edit-teacher.html" class="btn btn-sm bg-danger-light">
-                                                    <i class="feather-edit"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check check-tables">
-                                                <input class="form-check-input" type="checkbox"
-                                                    value="something">
-                                            </div>
-                                        </td>
-                                        <td>PRE2431</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="teacher-details.html"
-                                                    class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}"
-                                                        alt="User Image"></a>
-                                                <a href="teacher-details.html">Minnie</a>
-                                            </h2>
-                                        </td>
-                                        <td>11</td>
-                                        <td>Male</td>
-                                        <td>History</td>
-                                        <td>C</td>
-                                        <td>952 512 4909</td>
-                                        <td>4771 Oral Lake Road, Golden Valley</td>
-                                        <td class="text-end">
-                                            <div class="actions">
-                                                <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-                                                    <i class="feather-eye"></i>
-                                                </a>
-                                                <a href="edit-teacher.html" class="btn btn-sm bg-danger-light">
-                                                    <i class="feather-edit"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check check-tables">
-                                                <input class="form-check-input" type="checkbox"
-                                                    value="something">
-                                            </div>
-                                        </td>
-                                        <td>PRE1534</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="teacher-details.html"
-                                                    class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}"
-                                                        alt="User Image"></a>
-                                                <a href="teacher-details.html">Lois A</a>
-                                            </h2>
-                                        </td>
-                                        <td>10</td>
-                                        <td>Female</td>
-                                        <td>English</td>
-                                        <td>B</td>
-                                        <td>413 289 1314</td>
-                                        <td>2844 Leverton Cove Road, Palmer</td>
-                                        <td class="text-end">
-                                            <div class="actions">
-                                                <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-                                                    <i class="feather-eye"></i>
-                                                </a>
-                                                <a href="edit-teacher.html" class="btn btn-sm bg-danger-light">
-                                                    <i class="feather-edit"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check check-tables">
-                                                <input class="form-check-input" type="checkbox"
-                                                    value="something">
-                                            </div>
-                                        </td>
-                                        <td>PRE2153</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="teacher-details.html"
-                                                    class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}"
-                                                        alt="User Image"></a>
-                                                <a href="teacher-details.html">Calvin</a>
-                                            </h2>
-                                        </td>
-                                        <td>9</td>
-                                        <td>Male</td>
-                                        <td>Mathematics</td>
-                                        <td>C</td>
-                                        <td>701 753 3810</td>
-                                        <td>1900 Hidden Meadow Drive, Crete</td>
-                                        <td class="text-end">
-                                            <div class="actions">
-                                                <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-                                                    <i class="feather-eye"></i>
-                                                </a>
-                                                <a href="edit-teacher.html" class="btn btn-sm bg-danger-light">
-                                                    <i class="feather-edit"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check check-tables">
-                                                <input class="form-check-input" type="checkbox"
-                                                    value="something">
-                                            </div>
-                                        </td>
-                                        <td>PRE1434</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="teacher-details.html"
-                                                    class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}"
-                                                        alt="User Image"></a>
-                                                <a href="teacher-details.html">Vincent</a>
-                                            </h2>
-                                        </td>
-                                        <td>10</td>
-                                        <td>Male</td>
-                                        <td>Mathematics</td>
-                                        <td>C</td>
-                                        <td>402 221 7523</td>
-                                        <td>3979 Ashwood Drive, Omaha</td>
-                                        <td class="text-end">
-                                            <div class="actions">
-                                                <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-                                                    <i class="feather-eye"></i>
-                                                </a>
-                                                <a href="edit-teacher.html" class="btn btn-sm bg-danger-light">
-                                                    <i class="feather-edit"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check check-tables">
-                                                <input class="form-check-input" type="checkbox"
-                                                    value="something">
-                                            </div>
-                                        </td>
-                                        <td>PRE2345</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="teacher-details.html"
-                                                    class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}"
-                                                        alt="User Image"></a>
-                                                <a href="teacher-details.html">Kozma  Tatari</a>
-                                            </h2>
-                                        </td>
-                                        <td>9</td>
-                                        <td>Female</td>
-                                        <td>Science</td>
-                                        <td>A</td>
-                                        <td>04 2239 968</td>
-                                        <td>Rruga E Kavajes, Condor Center, Tirana</td>
-                                        <td class="text-end">
-                                            <div class="actions">
-                                                <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-                                                    <i class="feather-eye"></i>
-                                                </a>
-                                                <a href="edit-teacher.html" class="btn btn-sm bg-danger-light">
-                                                    <i class="feather-edit"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check check-tables">
-                                                <input class="form-check-input" type="checkbox"
-                                                    value="something">
-                                            </div>
-                                        </td>
-                                        <td>PRE2365</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="teacher-details.html"
-                                                    class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}"
-                                                        alt="User Image"></a>
-                                                <a href="teacher-details.html">John Chambers</a>
-                                            </h2>
-                                        </td>
-                                        <td>11</td>
-                                        <td>Male</td>
-                                        <td>Botony</td>
-                                        <td>B</td>
-                                        <td>870 663 2334</td>
-                                        <td>4667 Sunset Drive, Pine Bluff</td>
-                                        <td class="text-end">
-                                            <div class="actions">
-                                                <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-                                                    <i class="feather-eye"></i>
-                                                </a>
-                                                <a href="edit-teacher.html" class="btn btn-sm bg-danger-light">
-                                                    <i class="feather-edit"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check check-tables">
-                                                <input class="form-check-input" type="checkbox"
-                                                    value="something">
-                                            </div>
-                                        </td>
-                                        <td>PRE1234</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="teacher-details.html"
-                                                    class="avatar avatar-sm me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}"
-                                                        alt="User Image"></a>
-                                                <a href="teacher-details.html">Nathan Humphries</a>
-                                            </h2>
-                                        </td>
-                                        <td>10</td>
-                                        <td>Male</td>
-                                        <td>Biology</td>
-                                        <td>A</td>
-                                        <td>077 3499 9959</td>
-                                        <td>86 Lamphey Road, Thelnetham</td>
-                                        <td class="text-end">
-                                            <div class="actions">
-                                                <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-                                                    <i class="feather-eye"></i>
-                                                </a>
-                                                <a href="edit-teacher.html" class="btn btn-sm bg-danger-light">
-                                                    <i class="feather-edit"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @endforeach
+
                                 </tbody>
                             </table>
                         </div>
@@ -444,4 +132,9 @@
         </div>
     </div>
 </div>
+
+@section('script')
+
+@endsection
+
 @endsection
