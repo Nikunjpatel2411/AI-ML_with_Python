@@ -91,4 +91,10 @@ class TeacherController extends Controller
             return redirect()->back();
         }
     }
+
+    /** edit record */
+    public function editRecord()
+    {
+        return view('teacher.edit-teacher');
+    }
 }
