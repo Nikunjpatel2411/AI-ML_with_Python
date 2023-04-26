@@ -23,7 +23,7 @@ class TeacherController extends Controller
     {
         $listTeacher = DB::table('users')
             ->join('teachers','teachers.teacher_id','users.user_id')
-            ->select('users.user_id','users.name','users.avatar','teachers.gender','teachers.mobile','teachers.address')
+            ->select('users.user_id','users.name','users.avatar','teachers.id','teachers.gender','teachers.mobile','teachers.address')
             ->get();
         return view('teacher.list-teachers',compact('listTeacher'));
     }
@@ -93,8 +93,9 @@ class TeacherController extends Controller
     }
 
     /** edit record */
-    public function editRecord()
+    public function editRecord($id)
     {
-        return view('teacher.edit-teacher');
+        $teacher = Teacher::where('id',$id)->first();
+        return view('teacher.edit-teacher',compact('teacher'));
     }
 }

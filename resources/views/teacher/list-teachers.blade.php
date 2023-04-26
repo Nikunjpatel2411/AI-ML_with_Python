@@ -56,8 +56,7 @@
                                             class="feather-grid"></i></a>
                                     <a href="#" class="btn btn-outline-primary me-2"><i
                                             class="fas fa-download"></i> Download</a>
-                                    <a href="add-teacher.html" class="btn btn-primary"><i
-                                            class="fas fa-plus"></i></a>
+                                    <a href="{{ route('teacher/add/page') }}" class="btn btn-primary"><i class="fas fa-plus"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +114,7 @@
                                                 <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
                                                     <i class="feather-eye"></i>
                                                 </a>
-                                                <a href="{{ route('teacher/edit') }}" class="btn btn-sm bg-danger-light">
+                                                <a href="{{ url('teacher/edit/'.$list->id) }}" class="btn btn-sm bg-danger-light">
                                                     <i class="feather-edit"></i>
                                                 </a>
                                             </div>
