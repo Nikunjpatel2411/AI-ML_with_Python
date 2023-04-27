@@ -98,4 +98,38 @@ class TeacherController extends Controller
         $teacher = Teacher::where('id',$id)->first();
         return view('teacher.edit-teacher',compact('teacher'));
     }
+
+    /** update record teacher */
+    public function updateRecordTeacher(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+
+            $updateRecord = [
+                'full_name'     => $request->full_name,
+                'gender'        => $request->gender,
+                'date_of_birth' => $request->date_of_birth,
+                'mobile'        => $request->mobile,
+                'joining_date'  => $request->joining_date,
+                'qualification' => $request->qualification,
+                'experience'    => $request->experience,
+                'username'      => $request->username,
+                'address'       => $request->address,
+                'city'          => $request->city,
+                'state'         => $request->state,
+                'zip_code'      => $request->zip_code,
+                'country'      => $request->country,
+            ];
+            Teacher::where('id',$request->id)->update($updateRecord);
+            
+            Toastr::success('Has been update successfully :)','Success');
+            DB::commit();
+            return redirect()->back();
+           
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('fail, update record  :)','Error');
+            return redirect()->back();
+        }
+    }
 }

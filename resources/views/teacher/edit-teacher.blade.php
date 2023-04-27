@@ -15,13 +15,15 @@
                 </div>
             </div>
         </div>
-
+        {{-- message --}}
+        {!! Toastr::message() !!}
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="" method="POST">
+                        <form action="{{ route('teacher/update') }}" method="POST">
                             @csrf
+                            <input type="hidden" class="form-control" name="id" value="{{ $teacher->id }}">
                             <div class="row">
                                 <div class="col-12">
                                     <h5 class="form-title"><span>Basic Details</span></h5>
@@ -87,9 +89,9 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-4 local-forms">
-                                    <div class="form-group">
+                                    <div class="form-group local-forms calendar-icon">
                                         <label>Qualification <span class="login-danger">*</span></label>
-                                        <input type="text" class="form-control @error('qualification') is-invalid @enderror" name="qualification" placeholder="Enter Joining Date" value="{{ $teacher->qualification }}">
+                                        <input type="text" class="form-control datetimepicker @error('qualification') is-invalid @enderror" name="qualification" placeholder="Enter Joining Date" value="{{ $teacher->qualification }}">
                                         @error('qualification')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
