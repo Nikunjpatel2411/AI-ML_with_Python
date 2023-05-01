@@ -1,7 +1,8 @@
 
 @extends('layouts.master')
 @section('content')
-    
+{{-- message --}}
+{!! Toastr::message() !!}
 <div class="page-wrapper">
     <div class="content container-fluid">
         <div class="page-header">
@@ -90,6 +91,7 @@
                                                     value="something">
                                             </div>
                                         </td>
+                                        <td hidden class="id">{{ $list->id }}</td>
                                         <td>{{ $list->user_id }}</td>
                                         <td>
                                             <h2 class="table-avatar">
@@ -111,17 +113,16 @@
                                         <td>{{ $list->address }}</td>
                                         <td class="text-end">
                                             <div class="actions">
-                                                <a href="javascript:;" class="btn btn-sm bg-success-light me-2">
-                                                    <i class="feather-eye"></i>
-                                                </a>
                                                 <a href="{{ url('teacher/edit/'.$list->id) }}" class="btn btn-sm bg-danger-light">
                                                     <i class="feather-edit"></i>
+                                                </a>
+                                                <a class="btn btn-sm bg-danger-light teacher_delete" data-bs-toggle="modal" data-bs-target="#teacherDelete">
+                                                    <i class="feather-trash-2 me-1"></i>
                                                 </a>
                                             </div>
                                         </td>
                                     </tr>
                                     @endforeach
-
                                 </tbody>
                             </table>
                         </div>
@@ -132,8 +133,44 @@
     </div>
 </div>
 
-@section('script')
+{{-- model teacher delete --}}
+<div class="modal fade contentmodal" id="teacherDelete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content doctor-profile">
+            <div class="modal-header pb-0 border-bottom-0  justify-content-end">
+                <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><i
+                    class="feather-x-circle"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('teacher/delete') }}" method="POST">
+                    @csrf
+                    <div class="delete-wrap text-center">
+                        <div class="del-icon">
+                            <i class="feather-x-circle"></i>
+                        </div>
+                        <input type="hidden" name="id" class="e_id" value="">
+                        <h2>Sure you want to delete</h2>
+                        <div class="submit-section">
+                            <button type="submit" class="btn btn-success me-2">Yes</button>
+                            <a class="btn btn-danger" data-bs-dismiss="modal">No</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
+@section('script')
+    {{-- delete js --}}
+    <script>
+        $(document).on('click','.teacher_delete',function()
+        {
+            var _this = $(this).parents('tr');
+            $('.e_id').val(_this.find('.id').text());
+        });
+    </script>
 @endsection
 
 @endsection

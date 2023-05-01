@@ -104,6 +104,5 @@ Route::controller(TeacherController::class)->group(function () {
     Route::post('teacher/save', 'saveRecord')->middleware('auth')->name('teacher/save'); // save record
     Route::get('teacher/edit/{id}', 'editRecord'); // view teacher record
     Route::post('teacher/update', 'updateRecordTeacher')->middleware('auth')->name('teacher/update'); // update record
-
-
+    Route::post('teacher/delete', 'teacherDelete')->name('teacher/delete'); // delete record teacher
 });

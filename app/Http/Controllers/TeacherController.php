@@ -132,4 +132,21 @@ class TeacherController extends Controller
             return redirect()->back();
         }
     }
+
+    /** delete record */
+    public function teacherDelete(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+
+            Teacher::destroy($request->id);
+            DB::commit();
+            Toastr::success('Deleted record successfully :)','Success');
+            return redirect()->back();
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Deleted record fail :)','Error');
+            return redirect()->back();
+        }
+    }
 }
