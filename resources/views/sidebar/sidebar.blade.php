@@ -60,14 +60,14 @@
                     </ul>
                 </li>
                 
-                <li class="submenu">
+                <li class="submenu {{set_active(['department/add/page'])}}">
                     <a href="#"><i class="fas fa-building"></i>
                         <span> Departments</span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul>
                         <li><a href="departments.html">Department List</a></li>
-                        <li><a href="add-department.html">Department Add</a></li>
+                        <li><a href="{{ route('department/add/page') }}" class="{{set_active(['department/add/page'])}}">Department Add</a></li>
                         <li><a href="edit-department.html">Department Edit</a></li>
                     </ul>
                 </li>

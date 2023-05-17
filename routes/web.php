@@ -11,6 +11,7 @@ use App\Http\Controllers\TypeFormController;
 use App\Http\Controllers\Setting;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,4 +106,9 @@ Route::controller(TeacherController::class)->group(function () {
     Route::get('teacher/edit/{id}', 'editRecord'); // view teacher record
     Route::post('teacher/update', 'updateRecordTeacher')->middleware('auth')->name('teacher/update'); // update record
     Route::post('teacher/delete', 'teacherDelete')->name('teacher/delete'); // delete record teacher
+});
+
+// ----------------------- department -----------------------------//
+Route::controller(DepartmentController::class)->group(function () {
+    Route::get('department/add/page', 'indexDepartment')->middleware('auth')->name('department/add/page'); // page add department
 });
