@@ -111,4 +111,5 @@ Route::controller(TeacherController::class)->group(function () {
 // ----------------------- department -----------------------------//
 Route::controller(DepartmentController::class)->group(function () {
     Route::get('department/add/page', 'indexDepartment')->middleware('auth')->name('department/add/page'); // page add department
+    Route::get('department/edit/page', 'editDepartment')->middleware('auth')->name('department/edit/page'); // page add department
 });
