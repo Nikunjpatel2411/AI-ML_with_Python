@@ -29,32 +29,31 @@
                                     <div class="col-12 col-sm-4">
                                         <div class="form-group local-forms">
                                             <label>Department ID <span class="login-danger">*</span></label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="department_id">
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-4">
                                         <div class="form-group local-forms">
                                             <label>Department Name <span class="login-danger">*</span></label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="department_dame">
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-4">
                                         <div class="form-group local-forms">
                                             <label>Head of Department <span class="login-danger">*</span></label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="head_of_department">
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-4">
                                         <div class="form-group local-forms calendar-icon">
                                             <label>Department Start Date <span class="login-danger">*</span></label>
-                                            <input class="form-control datetimepicker" type="text"
-                                                placeholder="DD-MM-YYYY">
+                                            <input class="form-control datetimepicker" type="text" name="department_start_date" placeholder="DD-MM-YYYY">
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-4">
                                         <div class="form-group local-forms">
                                             <label>No of Students <span class="login-danger">*</span></label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="no_of_students">
                                         </div>
                                     </div>
                                     <div class="col-12">
