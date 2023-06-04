@@ -28,6 +28,13 @@ class TeacherController extends Controller
         return view('teacher.list-teachers',compact('listTeacher'));
     }
 
+    /** teacher Grid */
+    public function teacherGrid()
+    {
+        $teacherGrid = Teacher::all();
+        return view('teacher.teachers-grid',compact('teacherGrid'));
+    }
+
     /** save record */
     public function saveRecord(Request $request)
     {

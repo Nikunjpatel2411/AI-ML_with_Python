@@ -102,6 +102,7 @@ Route::controller(StudentController::class)->group(function () {
 Route::controller(TeacherController::class)->group(function () {
     Route::get('teacher/add/page', 'teacherAdd')->middleware('auth')->name('teacher/add/page'); // page teacher
     Route::get('teacher/list/page', 'teacherList')->middleware('auth')->name('teacher/list/page'); // page teacher
+    Route::get('teacher/grid/page', 'teacherGrid')->middleware('auth')->name('teacher/grid/page'); // page grid teacher
     Route::post('teacher/save', 'saveRecord')->middleware('auth')->name('teacher/save'); // save record
     Route::get('teacher/edit/{id}', 'editRecord'); // view teacher record
     Route::post('teacher/update', 'updateRecordTeacher')->middleware('auth')->name('teacher/update'); // update record
