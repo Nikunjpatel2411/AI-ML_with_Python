@@ -66,7 +66,7 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul>
-                        <li><a href="departments.html">Department List</a></li>
+                        <li><a href="{{ route('department/list/page') }}" class="{{set_active(['department/list/page'])}}">Department List</a></li>
                         <li><a href="{{ route('department/add/page') }}" class="{{set_active(['department/add/page'])}}">Department Add</a></li>
                         <li><a href="{{ route('department/edit/page') }}" class="{{set_active(['department/edit/page'])}}">Department Edit</a></li>
                     </ul>

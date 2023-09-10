@@ -17,4 +17,10 @@ class DepartmentController extends Controller
     {
         return view('department.edit-departmen');
     }
+
+    /** department list */
+    public function departmentList()
+    {
+        return view('department.list-department');
+    }
 }
