@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="loginbox">
                     <div class="login-left">
-                        <img class="img-fluid" src="{{ URL::to('assets/img/login.png') }}" alt="Logo">
+                        <img class="img-fluid" src="{{ URL::to('assets/img/svmitlogo2.png') }}" alt="Logo">
                     </div>
                     @yield('content')
                 </div>

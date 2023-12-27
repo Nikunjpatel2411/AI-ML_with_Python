@@ -71,7 +71,7 @@
                         <div class="db-widgets d-flex justify-content-between align-items-center">
                             <div class="db-info">
                                 <h6>Revenue</h6>
-                                <h3>$505</h3>
+                                <h3>₹505</h3>
                             </div>
                             <div class="db-icon">
                                 <img src="assets/img/icons/dash-icon-04.svg" alt="Dashboard Icon">
@@ -163,7 +163,7 @@
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="profile.html">
-                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Soeng Souy
+                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Jigar Patel
                                             </a>
                                         </td>
                                         <td class="text-center">1185</td>
@@ -178,7 +178,7 @@
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="profile.html">
-                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Soeng Souy
+                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Keyur Patel
                                             </a>
                                         </td>
                                         <td class="text-center">1195</td>
@@ -193,7 +193,7 @@
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="profile.html">
-                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Soeng Souy
+                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Nikunj Patel
                                             </a>
                                         </td>
                                         <td class="text-center">1196</td>
@@ -208,7 +208,7 @@
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="profile.html">
-                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Soeng Souy
+                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Jainil Vyas
                                             </a>
                                         </td>
                                         <td class="text-center">1187</td>
@@ -223,7 +223,7 @@
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="profile.html">
-                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Soeng Souy
+                                                <img class="rounded-circle"src="{{ URL::to('assets/img/profiles/avatar-01.jpg') }}" width="25" alt="Star Students"> Dhruv Patel
                                             </a>
                                         </td>
                                         <td class="text-center">1185</td>

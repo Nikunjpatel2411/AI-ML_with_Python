@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="page-sub-header">
-                            <h3 class="page-title">Welcome Bruklin!</h3>
+                            <h3 class="page-title">Welcome Student!</h3>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                                 <li class="breadcrumb-item active">Student</li>
@@ -160,7 +160,7 @@
                                             </div>
                                             <div class="views-lesson">
                                                 <h5>Staff</h5>
-                                                <h4>John Doe</h4>
+                                                <h4>Faculty</h4>
                                             </div>
                                         </div>
                                         <div class="lesson-activity">

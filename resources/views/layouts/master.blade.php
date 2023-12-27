@@ -177,7 +177,7 @@
 		{{-- content page --}}
         @yield('content')
         <footer>
-            <p>Copyright © 2022 Soeng Souy.</p>
+            <p>Thanks for Visiting !</p>
         </footer>
     
     </div>
